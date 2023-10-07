@@ -65,6 +65,12 @@ app.use(
     }),
   })
 );
+const cacheControlMaxAge = 3600;
+app.use(
+  express.static(path.join(__dirname, "public"), {
+    maxAge: cacheControlMaxAge * 1000,
+  })
+);
 
 const LoginUser = require("./controllers/loginUser");
 const Login = require("./controllers/Login");
