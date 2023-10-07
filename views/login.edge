@@ -1,0 +1,61 @@
+@layout('layouts/app')
+
+
+@section('content')
+
+
+<div id="colorlib-main">
+    <section class="ftco-section ftco-no-pt ftco-no-pb mt-5 text-secondary align-items-center text-dark">
+    <div class="container px-0 mt-5 " >
+    <div class="row no-gutters block-9 justify-content-center">
+      <div class="col-lg-5 order-md-last p-5  mt-5">
+        <h1 class="text-center m-5">Login</h1>
+        <form class="loginsignup" action="/user/login" method="POST">
+          
+
+          @if ((flashMessages.error).length>0  )
+          <div class="alert alert text-danger alert-danger  mb-2" role="alert">
+           <li> {{ flashMessages.error  }}</li>
+          </div>
+          @endif
+        
+
+            <!-- Email input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example1">Email address</label>
+
+              <input type="email" name="email" id="form2Example1" class="form-control" required />
+            </div>
+          
+            <!-- Password input -->
+            <div class="form-outline mb-4">
+              <label class="form-label" for="form2Example2">Password</label>
+
+              <input type="password" name="password" id="form2Example2" class="form-control" required/>
+            </div>
+          
+            <!-- 2 column grid layout for inline styling -->
+           
+            <!-- Submit button -->
+
+            <div class="d-flex justify-content-center"> 
+            <button type="submit " class=" BtnBox col-4 btn-primary btn-block mb-4 p-2 mt-3">Sign in</button>
+          </div>
+          
+            <!-- Register buttons -->
+            <div class="text-center">
+              <p>Not a member? <a href="/auth/signup">Register</a></p>
+            </div>
+          </form>
+      
+      </div>
+
+      
+    </div>
+
+    
+    </div>
+</section>
+</div>
+
+@endsection

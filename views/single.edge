@@ -1,0 +1,93 @@
+@layout('layouts/app')
+
+
+
+@section('content')
+
+
+<div id="colorlib-main">
+  <section class="ftco-section ftco-no-pt ftco-no-pb">
+    <div class="container px-0 ">
+      <div class="row d-flex no-gutters ">
+        <div class="col-lg-8 px-md-2 py-5 ">
+          <div class="row m-4  mr-5 text-justify ">
+            <h1 class="mb-3 text-left">{{SinglePost.title}}</h1>
+            <p><b>
+              {{SinglePost.subtitle}}</b>
+            </p>
+            <p>
+              <img src="https://source.unsplash.com//random/?{{SinglePost.imageTag}}" alt="" class="img-fluid">
+            </p>
+            <p>
+              {{{SinglePost.content}}}
+            </p>
+            <div class="tag-widget post-tag-container mb-5 mt-5">
+             
+            </div>
+
+           
+
+            <div class="pt-4 ">
+              <ul class="comment-list">
+                
+
+               
+            
+              <!-- END comment-list -->
+
+              <div class="comment-form-wrap pt-5">
+                <form action="#" class="p-3 p-md-4 ">
+                  <div class="form-group">
+                   </div>
+
+                  <div class="form-group">
+                   </div>
+                 
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- END-->
+        </div>
+        <div class="col-lg-4 sidebar ftco-animate bg-light pt-5">
+          <div class="sidebar-box pt-md-3 ">
+            
+          </div>  
+
+          <div class="sidebar-box ftco-animate">
+            <h3 class="sidebar-heading ml-3">Latest Articles</h3>
+
+            {{--  Artile Start  --}}
+
+            @each(post in posts)
+            <div class="block-21 mb-1 pt-1 d-flex justify-content-center border-bottom">
+              <div class="text text-right">
+                <h3 class="heading ">
+                  <a href="/post/{{post._id}}">{{post.title}}</a>
+                </h3>
+                <p class=""><a href=""> </a></p>
+              </div>
+            </div>
+            @endeach
+            {{--  Aticle end  --}}
+          </div>
+
+         
+
+          {{--  <div class="sidebar-box  ftco-animate">
+            
+          </div>  --}}
+
+          <div class="sidebar-box ftco-animate  ">
+          </div>
+        </div>
+
+        <!-- END COL -->
+      </div>
+    </div>
+  </section>
+</div>
+
+	
+
+@endsection

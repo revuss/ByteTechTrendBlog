@@ -1,0 +1,60 @@
+@layout('layouts/app')
+
+@section('content')
+		<div id="colorlib-main">
+			<section class="ftco-section ftco-no-pt ftco-no-pb bg-white">
+	    	<div class="container px-0">
+				<div class=" mt-10 mx-3 MainPage">
+					<h1 ><b>Byte</b></h1><h1><b>Tech</b></h1><h1><b>Trends</b></h1><br/>
+				<p class="text-justify">
+					Our blog takes you on an exciting trip down memory lane, unraveling the origins of the devices and technologies we often take for granted today. Discover the stories behind the first computers, the birth of the internet, and the pioneers who laid the groundwork for our digital age. Explore the intriguing tales of forgotten innovations and the pivotal moments that shaped the tech landscape.</p> 
+				<p class="text-justify">
+					ByteTechTrends doesn't just dwell on the past; we also keep you firmly grounded in the here and now. Stay updated on the latest tech trends, gadgets, and breakthroughs that are revolutionizing our lives today. Whether it's artificial intelligence, virtual reality, blockchain, or the Internet of Things, we're here to demystify the cutting-edge technologies shaping our world.
+				</p>
+				<p class="text-justify">
+					The internet, a marvel that has transformed the way we communicate, work, and entertain ourselves. ByteTechTrends celebrates the web's rich history, from its humble beginnings to its current global dominance. Dive into the intriguing stories of early websites, online communities, and the rise of social media. We also explore the internet's role in modern culture, privacy concerns, and its continued evolution.
+				</p><br/>
+				<h3 class="text-justify">Take a look at our latest blogs down here and embark on an exciting journey through the world of ByteTechTrends!</h3>
+				<br/><br/>
+				</div>
+	    		<div class="row no-gutters">
+	    			
+					{{--  two  --}}
+					@each(post in posts)
+					<div class="col-md-4 d-flex ">
+						<div class="blog-entry ftco-animate ">
+						<div class="carousel-blog owl-carousel">
+						<div class="item">
+						<a href="/post/{{post._id}}" class="img" style="background-image: url(https://source.unsplash.com//random/?{{post.imageTag}});"></a>
+						</div>
+						</div>
+						<div class="text p-4">
+						<h3 class="mb-2">
+							<div class="meta-wrap">
+								<p class="meta">
+					  <span><i class="icon-calendar mr-2"></i>{{post.createdAt.toDateString()}}</span>
+				  </p>
+			  </div>
+						<a href="/post/{{post._id}}">{{post.title}}</a></h3>
+						<div class="meta-wrap">
+						<p class="meta">
+						{{--  <span><i class="icon-calendar mr-2"></i>Sept. 10, 2019</span>  --}}
+						{{--  <span><i class="icon-comment2 mr-2"></i>5 Comment</span>  --}}
+						</p>
+						</div>
+						<p class="mb-4">{{post.subtitle}}</p>
+						<p><a href="/post/{{post._id}}" class="btn-custom">Read More <span class="ion-ios-arrow-forward"></span></a></p>
+						</div>
+						</div>
+						</div>
+
+					@endeach
+
+
+
+				{{--  Last				  --}}
+	    	</div>
+	    </section>
+		</div><!-- END COLORLIB-MAIN -->
+
+@endsection

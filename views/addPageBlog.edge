@@ -1,0 +1,47 @@
+@layout('layouts/app')
+
+@section('content')
+      <!-- END COLORLIB-ASIDE -->
+      <div id="colorlib-main">
+        <section class="ftco-section ftco-no-pt ftco-no-pb">
+          <div class="container px-0 ">
+            <div class="d-flex flex-row-reverse">
+              <a href="/auth/logout" class="btn btn-warning text-center ml-2 mt-4 " >Logout</a>
+            </div>
+            <div class="row no-gutters m-5 justify-content-center">
+              <h1 class=" text-center  mt-5">Add New Post</h1>
+              <div class="col-md-10 blog-wrap  mt-5  justify-content-center">
+                
+                <form class=" mt-5 d-flex flex-column " action="/post/store" method="POST" encType="multipart/form-data"> 
+                  <div class="form-group ">
+                    <label for="title">Username</label>
+                    <input type="text" class="form-control pt-2 ContactBox"  name="username" id="title" aria-describedby="emailHelp" required>
+                  </div>
+                  <div class="form-group ">
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control pt-2 ContactBox"  name="title" id="title" aria-describedby="emailHelp" required>
+                  </div>
+                  <div class="form-group pt-2">
+                    <label for="description">Subtitle</label>
+                    <input type="text" name="subtitle" class="form-control pt-2 ContactBox" id="description" required>
+                  </div>
+                  <div class="form-group pt-2">
+                    <label for="content">Content</label>
+                    <textarea class="form-control ContactBox" name="content" id="content" rows="4" required></textarea>
+                  </div>
+                  <div class="form-group pt-2">
+                    <label for="imageTag">Image Tags</label>
+                    <input type="text" name="imageTag" class="form-control pt-2 ContactBox" id="imageTag" required >
+                  </div>
+                 <div class="d-flex justify-content-center">
+                  <button type="submit" class="btn btn-only col-6 mt-5 BtnBox text-center mx-2 p-3">Add Post</button>
+
+                 </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- END COLORLIB-MAIN -->
+    @endsection
